@@ -18,6 +18,15 @@ app.use("*", cors({
 
 /* Routes */
 
+// Status check.
+app.get("/", async (c) => {
+  return c.json({
+    online: true,
+    version: "1.0.0",
+    website: "https://github.com/streamoverlay/open"
+  }, 200);
+});
+
 // Fetch channel.
 app.get('/twitch/channel', async (c) => {
   const twitch = withTwitch(c);
