@@ -1,0 +1,8 @@
+# Build directory
+.wrangler
+
+# Node modules
+node_modules
+
+# Secrets
+.dev.vars
