@@ -834,10 +834,10 @@ twitch-api-ts@0.1.2:
   dependencies:
     isomorphic-unfetch "^3.1.0"
 
-twitch-fetcher@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/twitch-fetcher/-/twitch-fetcher-1.2.3.tgz#bd9a2c75c987f874d1b5098b5f9a18fd2c242a0d"
-  integrity sha512-rI6QyjRYE0PE+vxPls9nxPS05T8A3covCA9kqyXmkQkeDNeyWu+IOfu4yKZhWUa85dSC+kUXsbr1eswTSzZNeQ==
+twitch-fetcher@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/twitch-fetcher/-/twitch-fetcher-1.2.4.tgz#eb24e4f9858b1ee4ceb520812f01fdde5c4dedc9"
+  integrity sha512-jFLYx0YIGvsaknwVnYbzb758y2rLsPCwWof+wFg2X1q2vZn1tFXCZt4jHUDyYbT/3tq+evjFJa37qaTsR+2svQ==
   dependencies:
     "7tv" "0.1.2"
     betterttv "^0.1.2"

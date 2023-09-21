@@ -1,5 +1,5 @@
 import { Hono } from 'hono';
-import {cors} from "hono/cors";
+import { cors } from 'hono/cors';
 
 import Provider from 'twitch-fetcher/lib/entities/provider';
 
@@ -11,20 +11,26 @@ import { withChannel } from './utils/withChannel';
 const app = new Hono();
 
 /* Middlewares */
-app.use("*", cors({
-  allowMethods: ["GET"],
-  origin: ["*"]
-}));
+app.use(
+  '*',
+  cors({
+    allowMethods: ['GET'],
+    origin: ['*'],
+  })
+);
 
 /* Routes */
 
 // Status check.
-app.get("/", async (c) => {
-  return c.json({
-    online: true,
-    version: "1.0.0",
-    website: "https://github.com/streamoverlay/open"
-  }, 200);
+app.get('/', async (c) => {
+  return c.json(
+    {
+      online: true,
+      version: '1.0.0',
+      website: 'https://github.com/streamoverlay/open',
+    },
+    200
+  );
 });
 
 // Fetch channel.
@@ -40,18 +46,17 @@ app.get('/twitch/channel', async (c) => {
   }
 
   if (channel == null) {
-    throw new NotFoundException("Twitch user not found");
+    throw new NotFoundException('Twitch user not found');
   }
 
   return c.json({ channel }, 200);
 });
 
-
 // Fetch emotes.
 app.get('/twitch/emotes', async (c) => {
   const twitch = withTwitch(c);
   const { id, username } = withChannel(c);
-  const providers = withStrArrayQuery(c, "providers", true) || ["twitch"];
+  const providers = withStrArrayQuery(c, 'providers', true) || ['twitch'];
 
   let emotes = null;
   if (id) {
@@ -61,7 +66,7 @@ app.get('/twitch/emotes', async (c) => {
   }
 
   if (emotes == null) {
-    throw new NotFoundException("Twitch user not found");
+    throw new NotFoundException('Twitch user not found');
   }
 
   return c.json({ emotes }, 200);
